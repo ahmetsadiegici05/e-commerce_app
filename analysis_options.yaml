@@ -1,0 +1,18 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  language:
+    strict-casts: true
+    strict-inference: true
+    strict-raw-types: true
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+
+linter:
+  rules:
+    # Additional rules for better code quality
+    prefer_single_quotes: true
+    prefer_relative_imports: true
+    sort_pub_dependencies: true
+    lines_longer_than_80_chars: false
