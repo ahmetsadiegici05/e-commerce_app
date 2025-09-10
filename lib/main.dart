@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'screens/products_screen.dart';
 
 void main() {
   runApp(
@@ -35,36 +36,51 @@ class HomePage extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text('İyzico E-Commerce'),
       ),
-      body: const Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Icon(
+            const Icon(
               Icons.shopping_cart,
               size: 80,
               color: Colors.deepPurple,
             ),
-            SizedBox(height: 16),
-            Text(
+            const SizedBox(height: 16),
+            const Text(
               'Flutter E-Commerce Uygulaması',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 8),
-            Text(
+            const SizedBox(height: 8),
+            const Text(
               'İyzico Payment Integration',
               style: TextStyle(fontSize: 16, color: Colors.grey),
             ),
-            SizedBox(height: 32),
-            Text(
-              'Uygulama geliştirme aşamasında...',
+            const SizedBox(height: 32),
+            const Text(
+              'Demo ürünlerini görmek için butona tıklayın',
               style: TextStyle(fontSize: 14),
+            ),
+            const SizedBox(height: 24),
+            ElevatedButton.icon(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const ProductsScreen()),
+                );
+              },
+              icon: const Icon(Icons.store),
+              label: const Text('Ürünleri Gör'),
+              style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+              ),
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // TODO: Navigate to products page
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => const ProductsScreen()),
+          );
         },
         tooltip: 'Ürünleri Gör',
         child: const Icon(Icons.store),
